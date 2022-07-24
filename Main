@@ -8,3 +8,22 @@ import matplotlib.pyplot as plt
 # Normalize pixel values to be between 0 and 1
 train_images = train_images / 255.0
 test_images = test_images / 255.0
+
+#model
+FIRST_LAYER = tf.keras.layers.Conv2D(64, (3,3), activation='relu', input_shape=(32, 32, 3))
+HIDDEN_LAYER_TYPE_1 = tf.keras.layers.MaxPooling2D(2, 2)
+HIDDEN_LAYER_TYPE_2 = tf.keras.layers.Conv2D(64, (3,3), activation='relu')
+HIDDEN_LAYER_TYPE_3 = tf.keras.layers.MaxPooling2D(3,3)
+HIDDEN_LAYER_TYPE_4 =tf.keras.layers.Flatten()
+HIDDEN_LAYER_TYPE_5 = tf.keras.layers.Dense(20, activation='relu')
+LAST_LAYER =   tf.keras.layers.Dense(10, activation='softmax')
+
+model = models.Sequential([
+       FIRST_LAYER,
+       HIDDEN_LAYER_TYPE_1,
+       HIDDEN_LAYER_TYPE_2,
+       HIDDEN_LAYER_TYPE_3,
+       HIDDEN_LAYER_TYPE_4,
+       layers.Flatten(),
+       HIDDEN_LAYER_TYPE_5,
+       LAST_LAYER])
