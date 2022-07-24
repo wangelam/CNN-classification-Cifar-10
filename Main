@@ -30,7 +30,7 @@ model = models.Sequential([
 
 
 
-
+#train model
 LOSS = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)   
 #for 2+ class problems: https://www.analyticsvidhya.com/blog/2021/05/guide-for-loss-function-in-tensorflow/
 OPTIMIZER = "adam" 
